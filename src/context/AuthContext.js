@@ -67,7 +67,8 @@ export class AuthContextProvider extends Component {
                     title: 'Registrasi berhasil!',
                     showConfirmButton: false,
                     timer: 1500
-                })
+                });
+                window.location.href = "/login"
             })
             .catch(err => {
                 this.setState({
