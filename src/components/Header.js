@@ -1,7 +1,34 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { withAuth } from "../context/AuthContext";
 
 class Header extends Component {
+    state = {
+        greeting: 'Halo'
+    }
+
+    componentDidMount(){
+        this.showTime()
+    }
+
+    showTime = () => {
+        const now = new Date().getHours();
+
+        if(now < 12) {
+            this.setState({
+                greeting: 'Selamat pagi'
+            })
+        } else if (now < 18) {
+            this.setState({
+                greeting: 'Selamat siang'
+            })
+        } else {
+            this.setState({
+                greeting: 'Selamat malam'
+            })
+        }
+    }
+
     render() {
         return(
             <React.Fragment>
@@ -21,23 +48,25 @@ class Header extends Component {
                         <use href="assets/brand/coreui.svg#full"></use>
                         </svg></a>
                     <div className="header-nav d-none d-md-flex">
-                        <li className="nav-item">Selamat Malam, Muhammad Haulul Azkiyaa</li>
+                        <li className="nav-item">{this.state.greeting}, {this.props.user.username}</li>
                     </div>
                     <ul className="header-nav ms-auto">
                         <li className="nav-item dropdown"><a className="nav-link py-0" data-coreui-toggle="dropdown" href="/" role="button" aria-haspopup="true" aria-expanded="false">
-                            <div className="avatar avatar-md"><img className="avatar-img" src="assets/img/avatars/8.jpg" alt="user@email.com" /></div>
+                            <svg className="icon icon-lg" width="118" height="46" alt="CoreUI Logo">
+                                <use href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+                            </svg>
                         </a>
                         <div className="dropdown-menu dropdown-menu-end pt-0">
                             <div className="dropdown-header bg-light py-2">
-                            <div className="fw-semibold">Account</div>
-                            </div><a className="dropdown-item" href="/">
+                            <div className="fw-semibold">Akun</div>
+                            </div><Link to="/password" className="dropdown-item">
                             <svg className="icon me-2">
                                 <use href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
-                            </svg>Change Password</a>
-                            <div className="dropdown-divider"></div><a className="dropdown-item" href="/">
+                            </svg>Ganti Kata Sandi</Link>
+                            <div className="dropdown-divider"></div><button className="dropdown-item" onClick={this.props.logout}>
                             <svg className="icon me-2">
                                 <use href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-                            </svg>Logout</a>
+                            </svg>Keluar</button>
                         </div>
                         </li>
                     </ul>
@@ -46,8 +75,8 @@ class Header extends Component {
                     <div className="container-fluid">
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb my-0 ms-2">
-                        <li className="breadcrumb-item">
-                            <a href="/">Home</a>
+                        <li className="breadcrumb-item" hidden={this.props.data.title === "Dashboard"}>
+                            <a href="/dashboard">Dashboard</a>
                         </li>
                         <li className="breadcrumb-item active"><span>{this.props.data.title}</span></li>
                         </ol>

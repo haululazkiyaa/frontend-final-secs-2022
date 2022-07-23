@@ -16,13 +16,13 @@ class NotFound extends Component {
     render() {
         return(
             <React.Fragment>
-                <Sidebar />
+                <Sidebar data={this.state} />
                     <div className="wrapper d-flex flex-column min-vh-100 bg-light">
                     <Header data={this.state} />
                     <div className="body flex-grow-1 px-3">
                       <div className="container-lg">
                         <div className="card mb-4">
-                          <div className="card-header">404 Not Found</div>
+                          <div className="card-header">{this.state.title}</div>
                           <div className="card-body">
                             <p>Tes</p>
                           </div>

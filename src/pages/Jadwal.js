@@ -11,20 +11,33 @@ class Jadwal extends Component {
 
   componentDidMount(){
     document.title = this.state.title;
+    this.props.sessionCheck();
   }
 
     render() {
         return(
             <React.Fragment>
-                <Sidebar />
+                <Sidebar data={this.state} />
                     <div className="wrapper d-flex flex-column min-vh-100 bg-light">
                     <Header data={this.state} />
                     <div className="body flex-grow-1 px-3">
                       <div className="container-lg">
-                        <div className="card mb-4">
-                          <div className="card-header">Jadwal</div>
-                          <div className="card-body">
-                            <p>Tes</p>
+                        <div className="row">
+                          <div className="col-lg-8">
+                            <div className="card mb-4">
+                              <div className="card-header">{this.state.title}</div>
+                              <div className="card-body">
+                                <p>Tes</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-lg-4">
+                            <div className="card mb-4">
+                              <div className="card-header">Unduhan</div>
+                              <div className="card-body">
+                                <p>Tes</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>

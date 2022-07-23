@@ -3,6 +3,10 @@ import { withAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 
 class Sidebar extends Component {
+  state = {
+    locate: this.props.data.title
+  }
+
   componentDidMount() {
     if(this.props.sidebarUnfoldable === ' sidebar-narrow-unfoldable show') {
       this.props.toggleSidebarMobile();
@@ -24,19 +28,18 @@ class Sidebar extends Component {
           <div className="sidebar-brand d-none d-md-flex">
             <div className="sidebar-brand-full">
               <img
-                src="https://i.ibb.co/zrXGNkq/SAIS.png"
+                src="https://i.ibb.co/99k3ggz/SAIS-1.png"
                 height="42"
                 alt="logo"
               />
             </div>
-            <svg
-              className="sidebar-brand-narrow"
-              width="46"
-              height="46"
-              alt="CoreUI Logo"
-            >
-              <use href="assets/brand/coreui.svg#signet"></use>
-            </svg>
+            <div className="sidebar-brand-narrow">
+              <img
+                src="https://i.ibb.co/N2K6sFH/Lihat-Jadwal-Kuliah-5.png"
+                height="42"
+                alt="logo"
+              />
+            </div>
           </div>
           <ul
             className="sidebar-nav"
@@ -45,66 +48,62 @@ class Sidebar extends Component {
           >
             <li className="nav-title">MENU</li>
             <li className="nav-item">
-              <Link to="/dashboard" className="nav-link">
+              <Link to="/dashboard" className={(this.state.locate === 'Dashboard') ? 'nav-link active' : 'nav-link'}
+               onClick={this.props.handleSubmenu}>
                 <svg className="nav-icon">
                   <use href="vendors/@coreui/icons/svg/free.svg#cil-apps"></use>
                 </svg>
                 Dashboard
-                <span className="badge badge-sm bg-info ms-auto">BARU</span>
               </Link>
             </li>
             <li className="nav-title">AKADEMIK</li>
             <li className="nav-item">
               <Link to="/jadwal"
-                className="nav-link"
+                 className={(this.state.locate === 'Jadwal') ? 'nav-link active' : 'nav-link'}
+                 onClick={this.props.handleSubmenu}
               >
                 <svg className="nav-icon">
-                  <use href="vendors/@coreui/icons/svg/free.svg#cil-calendar-check"></use>
+                  <use href="vendors/@coreui/icons/svg/free.svg#cil-list-rich"></use>
                 </svg>
                 Jadwal
               </Link>
             </li>
             <li className="nav-item">
               <Link to="/nilai"
-                className="nav-link"
-                href="https://coreui.io/docs/templates/installation/"
+                 className={(this.state.locate === 'Nilai') ? 'nav-link active' : 'nav-link'}
+                 onClick={this.props.handleSubmenu}
               >
                 <svg className="nav-icon">
                   <use href="vendors/@coreui/icons/svg/free.svg#cil-bar-chart"></use>
                 </svg>
                 Nilai
               </Link>
+            </li>
+            <li className={(this.props.submenu === 'show1') ? 'nav-group show' : 'nav-group'}><Link to="#" id="show1" className="nav-link nav-group-toggle" onClick={this.props.handleSubmenu}>
+              <svg className="nav-icon">
+                <use href="vendors/@coreui/icons/svg/free.svg#cil-star"></use>
+              </svg> Icons</Link>
+              <ul className="nav-group-items">
+                <li className="nav-item">
+                  <Link to="/about-us"  className={(this.state.locate === 'Tentang Kami') ? 'nav-link active' : 'nav-link'}> CoreUI Icons
+                  <span className="badge badge-sm bg-success ms-auto">Free</span>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/nilai" className={(this.state.locate === 'Nilai') ? 'nav-link active' : 'nav-link'}> CoreUI Icons - Brand</Link>
+                  </li>
+              </ul>
             </li>
             <li className="nav-item mt-auto">
-              <Link to="/signup"
-                className="nav-link"
+              <Link to="/about"
+                 className={(this.state.locate === 'Tentang PAMa') ? 'nav-link active' : 'nav-link'}
+                 onClick={this.props.handleSubmenu}
               >
                 <svg className="nav-icon">
-                  <use href="vendors/@coreui/icons/svg/free.svg#cil-layers"></use>
+                  <use href="vendors/@coreui/icons/svg/free.svg#cil-info"></use>
                 </svg>
-                Helpdesk
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/login"
-                className="nav-link"
-                href="https://coreui.io/docs/templates/installation/"
-              >
-                <svg className="nav-icon">
-                  <use href="vendors/@coreui/icons/svg/free.svg#cil-bar-chart"></use>
-                </svg>
-                Nilai
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/404"
-                className="nav-link"
-                href="https://coreui.io/docs/templates/installation/"
-              >
-                <svg className="nav-icon">
-                  <use href="vendors/@coreui/icons/svg/free.svg#cil-bar-chart"></use>
-                </svg>
-                404
+                Tentang PAMa
+                <span className="badge badge-sm bg-danger ms-auto">!</span>
               </Link>
             </li>
           </ul>

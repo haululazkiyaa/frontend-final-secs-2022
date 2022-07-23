@@ -52,7 +52,7 @@
   --cui-black-rgb: 0, 0, 21;
   --cui-body-color-rgb: 44, 56, 74;
   --cui-body-bg-rgb: 255, 255, 255;
-  --cui-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --cui-font-sans-serif:  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --cui-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --cui-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --cui-body-font-family: var(--cui-font-sans-serif);
@@ -5148,12 +5148,12 @@ html:not([dir=rtl]) .breadcrumb-item + .breadcrumb-item {
 *[dir=rtl] .breadcrumb-item + .breadcrumb-item {
   padding-right: var(--cui-breadcrumb-item-padding-x);
 }
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item:not(:last-child):after {
   color: var(--cui-breadcrumb-divider-color);
 }
-html:not([dir=rtl]) .breadcrumb-item + .breadcrumb-item::before {
-  float: left;
-  padding-right: var(--cui-breadcrumb-item-padding-x);
+html:not([dir=rtl]) .breadcrumb-item:not(:last-child):after {
+  float: right;
+  padding-left: var(--cui-breadcrumb-item-padding-x);
   content: var(--cui-breadcrumb-divider, "/");
 }
 *[dir=rtl] .breadcrumb-item + .breadcrumb-item::before {
@@ -8085,7 +8085,7 @@ html:not([dir=rtl]) .header-nav {
   --cui-sidebar-toggler-indicator-width: 4rem;
   --cui-sidebar-toggler-indicator-height: 3rem;
   --cui-sidebar-toggler-hover-bg: rgba(0, 0, 0, 0.3);
-  --cui-sidebar-toggler-indicator-hover: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='rgba%28255, 255, 255, 0.87%29' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E");
+  --cui-sidebar-toggler-indicator-hover: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='rgba(44, 56, 74, 0.95)' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E");
   --cui-sidebar-narrow-width: 4rem;
   --cui-sidebar-nav-title-padding-x: 1rem;
   --cui-sidebar-nav-title-padding-y: 0.75rem;
@@ -8110,11 +8110,11 @@ html:not([dir=rtl]) .header-nav {
   --cui-sidebar-nav-icon-height: 1.25rem;
   --cui-sidebar-nav-icon-font-size: 1.25rem;
   --cui-sidebar-nav-link-icon-color: rgba(255, 255, 255, 0.6);
-  --cui-sidebar-nav-group-bg: rgba(0, 0, 0, 0.2);
+  --cui-sidebar-nav-group-bg: rgba(0, 0, 0, 0.05);
   --cui-sidebar-nav-group-items-padding-y: 0;
   --cui-sidebar-nav-group-items-padding-x: 0;
-  --cui-sidebar-nav-group-indicator: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgba%28255, 255, 255, 0.6%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  --cui-sidebar-nav-group-indicator-hover: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgba%28255, 255, 255, 0.87%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --cui-sidebar-nav-group-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgba(44, 56, 74, 0.681)'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+  --cui-sidebar-nav-group-indicator-hover: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgba(225, 28, 34, 0.95)'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
   --cui-sidebar-nav-group-toggle-show-color: rgba(255, 255, 255, 0.6);
   position: relative;
   display: flex;
@@ -8592,6 +8592,9 @@ html:not([dir=rtl]) .sidebar-nav .nav-icon:first-child {
   background-repeat: no-repeat;
   background-position: center;
   transition: transform 0.15s;
+}
+.sidebar-nav .show .nav-group-toggle::after {
+  background-image: var(--cui-sidebar-nav-group-indicator-hover);
 }
 html:not([dir=rtl]) .sidebar-nav .nav-group-toggle::after {
   margin-left: auto;
