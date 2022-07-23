@@ -41,7 +41,10 @@ class Password extends Component {
                                         </svg></span>
                                       <input className="form-control" type="password" placeholder="Ulangi Kata Sandi" />
                                     </div>
-                                    <button to="login" className="btn btn-block btn-danger text-white" type="button">Ganti Kata Sandi</button>
+                                    <button to="login" className="btn btn-block btn-danger text-white" type="button" disabled={this.props.isLoading === true}>
+                                      <span class="spinner-border spinner-border-sm me-2" role="status" hidden={this.props.isLoading === false}></span>
+                                      Ganti Kata Sandi
+                                    </button>
                                   </div>
                                 </div>
                               </div>

@@ -46,6 +46,10 @@ class Login extends Component {
                             <h1>{this.state.title}</h1>
                             <p className="text-medium-emphasis">Silahkan login menggunakan akun anda untuk mengakses layanan Telkom University.</p>
                             <form onSubmit={this.handleSubmit}>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert" hidden={this.props.msg === ''}>
+                              {this.props.msg}
+                              <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
+                            </div>
                               <div className="input-group mb-3"><span className="input-group-text">
                                   <svg className="icon">
                                     <use href="vendors/@coreui/icons/svg/free.svg#cil-address-book"></use>
@@ -60,7 +64,10 @@ class Login extends Component {
                               </div>
                               <div className="row">
                                 <div className="col-6">
-                                  <button className="btn btn-danger text-white px-4" type="submit">Login</button>
+                                  <button className="btn btn-danger text-white px-4" type="submit" disabled={this.props.isLoading === true}>
+                                    <span class="spinner-border spinner-border-sm me-2" role="status" hidden={this.props.isLoading === false}></span>
+                                    Login
+                                  </button>
                                 </div>
                                 <div className="col-6 text-end">
                                   <button className="btn btn-link text-danger px-0" type="button">Lupa kata sandi?</button>

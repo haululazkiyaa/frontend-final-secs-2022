@@ -74,7 +74,10 @@ class Registrasi extends Component {
                                   </svg></span>
                                 <input className="form-control" name="password" type="password" placeholder="Kata Sandi" onChange={this.handleChange} />
                               </div>
-                              <button to="login" className="btn btn-block btn-danger text-white" type="submit">Create Account</button>
+                              <button to="login" className="btn btn-block btn-danger text-white" type="submit" disabled={this.props.isLoading === true}>
+                                  <span class="spinner-border spinner-border-sm me-2" role="status" hidden={this.props.isLoading === false}></span>
+                                  Create Account
+                                </button>
                             </form>
                           </div>
                         </div>

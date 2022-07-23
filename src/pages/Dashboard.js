@@ -79,7 +79,10 @@ class Dashboard extends Component {
                             <div className="card mb-4">
                               <div className="card-header">Perkuliahan</div>
                               <div className="card-body">
-                                <button className="btn btn-warning" onClick={this.alert}>Alert</button>
+                                <button className="btn btn-warning" onClick={this.alert} disabled={this.props.isLoading === true}>
+                                  <span class="spinner-border spinner-border-sm me-2" role="status" hidden={this.props.isLoading === false}></span>
+                                  Alert
+                                </button>
                               </div>
                             </div>
                           </div>

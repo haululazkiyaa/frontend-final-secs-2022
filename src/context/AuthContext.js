@@ -11,30 +11,38 @@ export class AuthContextProvider extends Component {
     constructor() {
         super()
         this.state = {
+            isLoading: false,
             isLoggedIn: localStorage.getItem('isLoggedIn') || false,
             user: '',
-            isLoading: false,
+            matkul: '',
             sidebarHide: '',
             sidebarUnfoldable: '',
-            submenu: ''
+            submenu: '',
+            msg: ''
         }
     }
 
-    // componentDidMount(){
-    //     this.sessionCheck();
-    // }
+    componentDidMount(){
+        this.sessionCheck();
+    }
 
     // session handler
     sessionCheck = () => {
+        this.setState({
+            isLoading: true,
+        })
+
         return axiosReq.get('https://secs2022-api.herokuapp.com/')
             .then(res => {
                 this.setState({
+                    isLoading: false,
                     user: res.data
                 })
             })
             .catch(err => {
                 if(err.response.status === 401) {
                     this.setState({
+                        isLoading: false,
                         isLoggedIn: false
                     })
                 }
@@ -120,19 +128,22 @@ export class AuthContextProvider extends Component {
                 })
 
                 if(err.response.status === 401) {
-                    Swal.fire({
-                        icon: 'warning',
-                        title: err.response.data.message,
-                        showConfirmButton: false,
-                        timer: 1500
+                    // Swal.fire({
+                    //     icon: 'warning',
+                    //     title: err.response.data.message,
+                    //     showConfirmButton: false,
+                    //     timer: 1500
+                    // })
+                    this.setState({
+                        msg: err.response.data.message
                     })
                 } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Galat saat menghubungi server!',
-                        showConfirmButton: false,
-                        timer: 1500
+                    this.setState({
+                        isLoggedIn: false,
+                        isLoading: false
                     })
+                    
+                    this.responseAlert('error', 'Gagal mengkoneksi ke server!');
                 }
             })
     }
@@ -152,25 +163,25 @@ export class AuthContextProvider extends Component {
                     isLoggedIn: false
                 })
 
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Berhasil keluar!',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+                this.responseAlert('success', 'Logout berhasil!');
             })
             .catch(() => {
                 this.setState({
                     isLoading: false
                 })
 
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Gagal keluar!',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+                this.responseAlert('error', 'Logout gagal!');
             })
+    }
+
+    // response alert
+    responseAlert = (icon, title) => {
+        Swal.fire({
+            icon: icon,
+            title: title,
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
     // toggle sidebar

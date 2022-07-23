@@ -5,7 +5,7 @@ class Footer extends Component {
     render() {
         return(
             <React.Fragment>
-                <div className="spinner-border" role="status">
+                <div className="spinner-border m-3" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
             </React.Fragment>
