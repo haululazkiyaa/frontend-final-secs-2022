@@ -3,6 +3,8 @@ import { withAuth } from "../context/AuthContext";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import JadwalDosen from "../view/dosen/JadwalDosen";
+import JadwalMahasiswa from "../view/mahasiswa/JadwalMahasiswa";
 
 class Jadwal extends Component {
   state = {
@@ -27,7 +29,10 @@ class Jadwal extends Component {
                             <div className="card mb-4">
                               <div className="card-header">{this.state.title}</div>
                               <div className="card-body">
-                                <p>Tes</p>
+                                {
+                                  this.props.user.Role === "MAHASISWA" ? <JadwalMahasiswa />
+                                                                        : <JadwalDosen />
+                                }
                               </div>
                             </div>
                           </div>

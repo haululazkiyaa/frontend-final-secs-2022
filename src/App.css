@@ -71,10 +71,12 @@ a:hover {
 
 .btn-danger, .dropdown-item:active {
   background-color: #e11c22;
+  color: #ffffff;
 }
 
-.btn-danger:hover {
+.btn-danger:hover, .btn-danger:focus, .btn.disabled {
   background-color: #e0585c;
+  color: #ffffff;
 }
 
 .text-light:hover, .btn-outline-danger:hover, .btn-outline-danger:focus {
@@ -132,7 +134,7 @@ a:hover {
   object-fit: cover;
 }
 
-.form-control:focus, .btn-link:focus {
+.form-control:focus, .btn-link:focus, .form-select:focus {
   border-color: rgba(225, 28, 34, 0.25);
   box-shadow: 0 0 0 0.25rem rgba(225, 28, 34, 0.25);
 }

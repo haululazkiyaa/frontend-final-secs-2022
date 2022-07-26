@@ -49,7 +49,7 @@ class Registrasi extends Component {
                                   <label htmlFor="inputPassword6" className="col-form-label">Registrasi sebagai:</label>
                                 </div>
                                 <div className="col-auto">
-                                  <select className="form-select" name="role" aria-label="Default select example" onChange={this.handleChange}>
+                                  <select className="form-select" name="role" aria-label="Default select example" onChange={this.handleChange} required>
                                     <option disabled>Pilih</option>
                                     <option value="MAHASISWA">Mahasiswa</option>
                                     <option value="DOSEN">Dosen</option>
@@ -60,19 +60,19 @@ class Registrasi extends Component {
                                   <svg className="icon">
                                     <use href="vendors/@coreui/icons/svg/free.svg#cil-address-book"></use>
                                   </svg></span>
-                                <input className="form-control" name="name" type="text" placeholder="Nama Lengkap"  onChange={this.handleChange} />
+                                <input className="form-control" name="name" type="text" placeholder="Nama Lengkap"  onChange={this.handleChange} required />
                               </div>
                               <div className="input-group mb-3"><span className="input-group-text">
                                   <svg className="icon">
                                     <use href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                                   </svg></span>
-                                <input className="form-control" name="username" type="text" placeholder="Username" onChange={this.handleChange} />
+                                <input className="form-control" name="username" type="text" placeholder="Username" onChange={this.handleChange} required />
                               </div>
                               <div className="input-group mb-4"><span className="input-group-text">
                                   <svg className="icon">
                                     <use href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                                   </svg></span>
-                                <input className="form-control" name="password" type="password" placeholder="Kata Sandi" onChange={this.handleChange} />
+                                <input className="form-control" name="password" type="password" placeholder="Kata Sandi" onChange={this.handleChange} required />
                               </div>
                               <button to="login" className="btn btn-block btn-danger text-white" type="submit" disabled={this.props.isLoading === true}>
                                   <span class="spinner-border spinner-border-sm me-2" role="status" hidden={this.props.isLoading === false}></span>

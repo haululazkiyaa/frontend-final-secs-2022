@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { Component } from "react";
-import Swal from 'sweetalert2'
+import { toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const AuthContext = React.createContext();
 const axiosReq = axios.create({
@@ -14,7 +16,6 @@ export class AuthContextProvider extends Component {
             isLoading: false,
             isLoggedIn: localStorage.getItem('isLoggedIn') || false,
             user: '',
-            matkul: '',
             sidebarHide: '',
             sidebarUnfoldable: '',
             submenu: '',
@@ -22,9 +23,9 @@ export class AuthContextProvider extends Component {
         }
     }
 
-    componentDidMount(){
-        this.sessionCheck();
-    }
+    // componentDidMount(){
+    //     this.sessionCheck();
+    // }
 
     // session handler
     sessionCheck = () => {
@@ -40,12 +41,20 @@ export class AuthContextProvider extends Component {
                 })
             })
             .catch(err => {
+                this.setState({
+                    isLoading: false
+                })
+                
                 if(err.response.status === 401) {
                     this.setState({
-                        isLoading: false,
                         isLoggedIn: false
                     })
+                    
+                    this.notify('error', 'Sesi anda telah berakhir!');
+                } else {
+                    this.notify('error', 'Terjadi kesalahan!');
                 }
+
             })
     }
 
@@ -62,12 +71,8 @@ export class AuthContextProvider extends Component {
             'Role': credentials.role
         })
             .then(() => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Registrasi berhasil!',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+                this.notify('success', 'Registrasi berhasil!');
+
                 window.location.href = "/login"
             })
             .catch(err => {
@@ -76,19 +81,9 @@ export class AuthContextProvider extends Component {
                 })
 
                 if(err.response.status === 400) {
-                    Swal.fire({
-                        icon: 'warning',
-                        title: err.response.data.message,
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
+                    this.notify('warning', err.response.data.message);
                 } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Galat saat menghubungi server!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
+                    this.notify('error', 'Gagal mengkoneksi ke server!');
                 }
             })
     }
@@ -102,6 +97,8 @@ export class AuthContextProvider extends Component {
         return axiosReq.post('https://secs2022-api.herokuapp.com/auth/login', credentials)
             .then(res => {
                 if(res.data.Success) {
+                    this.notify('success', 'Login berhasil!');
+
                     localStorage.setItem('isLoggedIn', true);
 
                     this.setState({
@@ -114,12 +111,7 @@ export class AuthContextProvider extends Component {
                         isLoggedIn: false
                     })
 
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Periksa kembali detail login anda!',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
+                    this.notify('warning', 'Login gagal');
                 }
             })
             .catch(err => {
@@ -129,22 +121,13 @@ export class AuthContextProvider extends Component {
                 })
 
                 if(err.response.status === 401) {
-                    // Swal.fire({
-                    //     icon: 'warning',
-                    //     title: err.response.data.message,
-                    //     showConfirmButton: false,
-                    //     timer: 1500
-                    // })
+                    this.notify('warning', err.response.data.message);
+
                     this.setState({
                         msg: err.response.data.message
                     })
                 } else {
-                    this.setState({
-                        isLoggedIn: false,
-                        isLoading: false
-                    })
-                    
-                    this.responseAlert('error', 'Gagal mengkoneksi ke server!');
+                    this.notify('error', 'Gagal mengkoneksi ke server!');
                 }
             })
     }
@@ -164,25 +147,46 @@ export class AuthContextProvider extends Component {
                     isLoggedIn: false
                 })
 
-                this.responseAlert('success', 'Logout berhasil!');
+                this.notify('success', 'Logout berhasil!');
             })
             .catch(() => {
                 this.setState({
                     isLoading: false
                 })
 
-                this.responseAlert('error', 'Logout gagal!');
+                this.notify('error', 'Logout gagal!');
             })
     }
 
-    // response alert
-    responseAlert = (icon, title) => {
-        Swal.fire({
-            icon: icon,
-            title: title,
-            showConfirmButton: false,
-            timer: 1500
-        })
+    // toast notify
+    notify = (type, msg) => {
+        if(type === "success") {
+            toast.success(msg, {
+                autoClose: 2000,
+                theme: "colored"
+            });
+        } else if(type === "error") {
+            toast.error(msg, {
+                autoClose: 2000,
+                theme: "colored"
+            });
+        } else if(type === "warning") {
+            toast.warn(msg, {
+                autoClose: 2000,
+                theme: "colored"
+            });
+        } else if(type === "info") {
+            toast.info(msg, {
+                autoClose: 2000,
+                theme: "colored"
+            });
+        } else {
+            toast(msg, {
+                autoClose: 2000,
+                theme: "colored"
+            });
+        }
+        
     }
 
     // toggle sidebar
@@ -249,6 +253,7 @@ export class AuthContextProvider extends Component {
                     register: this.register,
                     login: this.login,
                     logout: this.logout,
+                    notify: this.notify,
                     ...this.state
                 }
             }>

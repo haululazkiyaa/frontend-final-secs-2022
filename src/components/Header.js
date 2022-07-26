@@ -48,7 +48,7 @@ class Header extends Component {
                         <use href="assets/brand/coreui.svg#full"></use>
                         </svg></a>
                     <div className="header-nav d-none d-md-flex">
-                        <li className="nav-item">{this.state.greeting}, {this.props.user.username}</li>
+                        <li className="nav-item">{this.state.greeting}, {this.props.user.name}</li>
                     </div>
                     <ul className="header-nav ms-auto">
                         <li className="nav-item dropdown"><a className="nav-link py-0" data-coreui-toggle="dropdown" href="/" role="button" aria-haspopup="true" aria-expanded="false">

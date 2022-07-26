@@ -67,9 +67,9 @@ class Dashboard extends Component {
                           <div className="card-body card-backdrop text-white p-5">
                             <div className="row">
                               <div className="col">
-                                <p><strong>Selamat datang,</strong></p>
-                                <h2>{this.props.user.username}</h2>
-                                <h3>-</h3>
+                                <span>Selamat datang,</span>
+                                <h2>{this.props.user.name}</h2>
+                                <p><span class="badge bg-white me-2 text-black">ID Number</span>{this.props.user.username}</p>
                               </div>
                             </div>
                           </div>

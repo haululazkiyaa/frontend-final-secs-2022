@@ -46,7 +46,7 @@ class Login extends Component {
                             <h1>{this.state.title}</h1>
                             <p className="text-medium-emphasis">Silahkan login menggunakan akun anda untuk mengakses layanan Telkom University.</p>
                             <form onSubmit={this.handleSubmit}>
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert" hidden={this.props.msg === ''}>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert" hidden={this.props.msg === ''}>
                               {this.props.msg}
                               <button type="button" class="btn-close" data-coreui-dismiss="alert" aria-label="Close"></button>
                             </div>
@@ -54,13 +54,13 @@ class Login extends Component {
                                   <svg className="icon">
                                     <use href="vendors/@coreui/icons/svg/free.svg#cil-address-book"></use>
                                   </svg></span>
-                                <input className="form-control" name="username" type="text" placeholder="Username" onChange={this.handleChange} />
+                                <input className="form-control" name="username" type="text" placeholder="Username" onChange={this.handleChange} required />
                               </div>
                               <div className="input-group mb-3"><span className="input-group-text">
                                   <svg className="icon">
                                     <use href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                                   </svg></span>
-                                <input className="form-control" name="password" type="password" placeholder="Kata Sandi" onChange={this.handleChange}  />
+                                <input className="form-control" name="password" type="password" placeholder="Kata Sandi" onChange={this.handleChange} required />
                               </div>
                               <div className="row">
                                 <div className="col-6">

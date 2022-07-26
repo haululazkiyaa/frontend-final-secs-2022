@@ -2,6 +2,7 @@ import './App.css';
 import React, { Component, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
+import { ToastContainer } from 'react-toastify';
 import Loading from './components/Loading';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -40,6 +41,7 @@ class App extends Component {
               </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <ToastContainer />
           </Suspense>
         </BrowserRouter>
       </AuthContextProvider>
