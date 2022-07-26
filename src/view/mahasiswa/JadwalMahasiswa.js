@@ -95,7 +95,8 @@ class JadwalMahasiswa extends Component {
                 }
             }
         ],
-        schedule: {
+        schedule: [],
+        jadwal: {
             Senin: [],
             Selasa: [],
             Rabu: [],
@@ -134,7 +135,7 @@ class JadwalMahasiswa extends Component {
         }
 
         this.setState({
-            schedule: newSchedule
+            jadwal: newSchedule
         })
     }
 
@@ -328,13 +329,13 @@ class JadwalMahasiswa extends Component {
                 <button className="btn btn-danger" type="button" data-coreui-toggle="modal" data-coreui-target="#exampleModalCenteredScrollable" onClick={this.getMatkul}>Pilih Mata Kuliah</button>
                 <table className="table table-bordered">
                     <tbody>
-                        {Object.keys(this.state.schedule).map((key) => (
+                        {Object.keys(this.state.jadwal).map((key) => (
                             <tr key={key}>
                                 <th className="table-danger text-center" scope="row">
                                     {key}
                                 </th>
-                                {this.state.schedule[key].length > 0 &&
-                                    this.state.schedule[key].map((data, index) => (
+                                {this.state.jadwal[key].length > 0 &&
+                                    this.state.jadwal[key].map((data, index) => (
                                     <td
                                         key={index}
                                     >
