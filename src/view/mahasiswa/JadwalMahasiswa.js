@@ -86,7 +86,6 @@ class JadwalMahasiswa extends Component {
             Minggu: [],
         }
         
-        console.log("Data", mahasiswa)
         
         function timeToSec(time) {
             const timeArray = time.split(".")
@@ -98,13 +97,12 @@ class JadwalMahasiswa extends Component {
                 if(!newSchedule[jadwal]) {
                     newSchedule[jadwal] = []
                 } else {
-                    newSchedule[jadwal].push(mahasiswa);
+                    newSchedule[jadwal] = [matkul, ...newSchedule[jadwal]];
                 }
                 newSchedule[jadwal].sort((a, b) => timeToSec(a) - timeToSec(b))
             }
         }
 
-        console.log(newSchedule)
 
         this.setState({
             jadwal: newSchedule
@@ -299,6 +297,7 @@ class JadwalMahasiswa extends Component {
 
         return(
             <React.Fragment>
+                {JSON.stringify(this.state.jadwal)}
                 <button className="btn btn-danger" type="button" data-coreui-toggle="modal" data-coreui-target="#exampleModalCenteredScrollable" onClick={this.getMatkul}>Pilih Mata Kuliah</button>
                 <table className="table table-bordered">
                     <tbody>
@@ -309,11 +308,15 @@ class JadwalMahasiswa extends Component {
                                 </th>
                                 {this.state.jadwal[key].length > 0 &&
                                     this.state.jadwal[key].map((data, index) => (
-                                    <td
-                                        key={index}
-                                    >
-                                        {data[index].MataKuliah.code}
-                                    </td>
+                                        <td
+                                            key={index}
+                                        >
+                                            {/* {data[index].MataKuliah.code} */}
+                                            {<div>{index}</div>}
+                                            {<div>{key}</div>}
+                                            {JSON.stringify(data)}
+                                            {/* {"Lorem Ipsum"} */}
+                                        </td>
                                     ))}
                             </tr>
                         ))}
