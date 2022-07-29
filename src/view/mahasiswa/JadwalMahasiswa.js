@@ -26,75 +26,7 @@ class JadwalMahasiswa extends Component {
             class: '',
             prodi: ''
         },
-        mahasiswa: [
-            {
-                "schedule": [
-                    "Senin"
-                ],
-                "start": "2",
-                "end": "1",
-                "semester": 1,
-                "MataKuliah": {
-                    "id": 16,
-                    "code": "S1RPLPK5",
-                    "name": "Pemrogramman Web",
-                    "room": "Aula Bale Riung",
-                    "class": "S1 Informatika",
-                    "prodi": "FMIPA"
-                }
-            },
-            {
-                "schedule": [
-                    "Senin",
-                    "Selasa",
-                    "Rabu"
-                ],
-                "start": "5",
-                "end": "5",
-                "semester": 1,
-                "MataKuliah": {
-                    "id": 14,
-                    "code": "S1RPLPK1",
-                    "name": "Pendidikan Kewarganegaraan",
-                    "room": "Aula Bale Riung",
-                    "class": "S1 Informatika",
-                    "prodi": "FMIPA"
-                }
-            },
-            {
-                "schedule": [
-                    "Rabu",
-                    "Sabtu"
-                ],
-                "start": "09.00",
-                "end": "10.00",
-                "semester": 1,
-                "MataKuliah": {
-                    "id": 18,
-                    "code": "KLK",
-                    "name": "Kalkulus",
-                    "room": "2",
-                    "class": "Matematika",
-                    "prodi": "FMIPA"
-                }
-            },
-            {
-                "schedule": [
-                    "Selasa"
-                ],
-                "start": "09.00",
-                "end": "10.00",
-                "semester": 1,
-                "MataKuliah": {
-                    "id": 10,
-                    "code": "S1RPLPAI1",
-                    "name": "Pendidikan Agama Islam",
-                    "room": "3",
-                    "class": "S1 Rekayasa Perangkat Lunak",
-                    "prodi": "FMIPA"
-                }
-            }
-        ],
+        mahasiswa: [],
         schedule: [],
         jadwal: {
             Senin: [],
@@ -108,12 +40,42 @@ class JadwalMahasiswa extends Component {
     }
 
     componentDidMount() {
-        this.setJadwal();
+        this.getMahasiswa();
       }
     
 
+    // handle data mahasiswa
+    getMahasiswa = () => {
+        this.setState({
+            isLoading: true,
+        })
+
+        return axiosReq.get('https://secs2022-api.herokuapp.com/user-matakuliah')
+            .then(res => {
+                this.setState({
+                    isLoading: false,
+                    mahasiswa: res.data.User_MataKuliah,
+                })
+
+                this.setJadwal();
+            })
+            .catch(err => {
+                this.setState({
+                    isLoading: false
+                })
+
+                if(err.response.status === 401) {
+                    this.props.notify('error', 'Harap login kembali!');
+                } else {
+                    this.props.notify('error', 'Terjadi kesalahan!');
+                }
+            })
+    }
+
     // handle jadwal mahasiswa
     setJadwal = () => {
+        const mahasiswa = this.state.mahasiswa
+
         const newSchedule = {
             Senin: [],
             Selasa: [],
@@ -124,12 +86,12 @@ class JadwalMahasiswa extends Component {
             Minggu: [],
         }
     
-        for(const matkul of this.state.mahasiswa) {
+        for(const matkul of mahasiswa) {
             for(const jadwal of matkul.schedule) {
                 if(!newSchedule[jadwal]) {
                 newSchedule[jadwal] = []
                 } else {
-                newSchedule[jadwal].push(this.state.mahasiswa);
+                newSchedule[jadwal].push(mahasiswa);
                 }
             }
         }
@@ -246,6 +208,7 @@ class JadwalMahasiswa extends Component {
 
                     this.props.notify('success', 'Data telah ditambahkan ke jadwal anda!');
                     this.getMatkul();
+                    this.setJadwal();
                 })
                 .catch(err => {
                     this.setState({
@@ -339,7 +302,7 @@ class JadwalMahasiswa extends Component {
                                     <td
                                         key={index}
                                     >
-                                        {data[index].MataKuliah.name}
+                                        {data[index].MataKuliah.code}
                                     </td>
                                     ))}
                             </tr>
@@ -478,7 +441,7 @@ class JadwalMahasiswa extends Component {
                                 </div>
                                 <div className="modal-footer">
                                     <button className="btn btn-outline-danger" type="button" data-coreui-toggle="modal" data-coreui-target="#exampleModalCenteredScrollable">Batal</button>
-                                    <label className={this.state.disabledPilih} htmlFor="pilih" data-coreui-toggle="modal" data-coreui-target="#exampleModalCenteredScrollable">Simpan</label>
+                                    <label className={this.state.disabledPilih} htmlFor="pilih"  data-coreui-dismiss="modal" >Simpan</label>
                                 </div>
                             </div>
                         </div>
