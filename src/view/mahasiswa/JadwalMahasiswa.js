@@ -85,16 +85,26 @@ class JadwalMahasiswa extends Component {
             Sabtu: [],
             Minggu: [],
         }
-    
+        
+        console.log("Data", mahasiswa)
+        
+        function timeToSec(time) {
+            const timeArray = time.split(".")
+            return ((+timeArray[0]) * 3600) + ((+timeArray[1]) * 60)
+        }
+
         for(const matkul of mahasiswa) {
             for(const jadwal of matkul.schedule) {
                 if(!newSchedule[jadwal]) {
-                newSchedule[jadwal] = []
+                    newSchedule[jadwal] = []
                 } else {
-                newSchedule[jadwal].push(mahasiswa);
+                    newSchedule[jadwal].push(mahasiswa);
                 }
+                newSchedule[jadwal].sort((a, b) => timeToSec(a) - timeToSec(b))
             }
         }
+
+        console.log(newSchedule)
 
         this.setState({
             jadwal: newSchedule
