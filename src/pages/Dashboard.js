@@ -66,7 +66,7 @@ class Dashboard extends Component {
                         <a href="tel:+62222022023;10058">
                           022-2022023 ext. 10058
                         </a>
-                        &nbsp; / Whatsapp:
+                        &nbsp; / Whatsapp:&nbsp;
                         <a href="https://wa.me/628112096229">08112096229</a>
                       </p>
                       <hr />
@@ -79,7 +79,7 @@ class Dashboard extends Component {
                         <a href="mailto:keuangan@telkomuniveristy.ac.id">
                           keuangan@telkomuniveristy.ac.id
                         </a>
-                        &nbsp; / Whatsapp:
+                        &nbsp; / Whatsapp:&nbsp;
                         <a href="https://wa.me/628112096229">08112096229</a>
                         &nbsp; (Chat only)
                       </p>
@@ -93,9 +93,9 @@ class Dashboard extends Component {
                         <a href="mailto:akademik@telkomuniveristy.ac.id">
                           akadmik@telkomuniveristy.ac.id
                         </a>
-                        &nbsp; / Telepon:{" "}
+                        &nbsp; / Telepon: 
                         <a href="tel:+62222022023">022-2022023</a>&nbsp; (Jam
-                        &amp; Hari Kerja) / Whatsapp:
+                        &amp; Hari Kerja) / Whatsapp:&nbsp;
                         <a href="https://wa.me/628112096229">08112096229</a>
                         &nbsp; (Chat Only) (Jam &amp; Hari Kerja)
                       </p>
@@ -116,7 +116,7 @@ class Dashboard extends Component {
                         <a href="tel:+62222022023;1147">
                           022-2022023 ext. 1147
                         </a>
-                        &nbsp; / Whatsapp:
+                        &nbsp; / Whatsapp:&nbsp;
                         <a href="https://wa.me/628112096229">08112096229</a>
                         &nbsp; (Chat Only) (Jam &amp; Hari Kerja)
                       </p>
@@ -138,7 +138,7 @@ class Dashboard extends Component {
                       </div>
                       <div className="alert alert-info" role="alert">
                         Jadwal pra-perkuliahan Mahasiswa Baru program Sarjana
-                        (S1) dapat di unduh
+                        (S1) dapat di unduh&nbsp;
                         <Link to="/" className="alert-link">
                           disini
                         </Link>

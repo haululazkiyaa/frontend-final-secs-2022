@@ -96,16 +96,16 @@ class About extends Component {
                         <li><strong>Foto wanita memegang folder </strong>- https://unsplash.com/photos/FcLyt7lW5wg</li>
                       </ul>
                       <hr />
-                      <Link to="" className="btn btn-primary me-2" type="button">
+                      <a href="https://github.com/thomaslyokos2021/files/raw/main/documentation.pdf" className="btn btn-primary me-2" type="button">
                         <svg className="icon me-2">
                           <use href="vendors/@coreui/icons/svg/brand.svg#cil-book"></use>
                         </svg>Dokumentasi
-                      </Link>
-                      <Link to="https://github.com/haululazkiyaa/frontend-final-secs-2022#readme" className="btn btn-success text-white" type="button">
+                      </a>
+                      <a href="https://github.com/haululazkiyaa/frontend-final-secs-2022#readme" className="btn btn-success text-white" type="button">
                         <svg className="icon me-2">
                           <use href="vendors/@coreui/icons/svg/brand.svg#cib-github"></use>
                         </svg>Source Code
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>

@@ -47,10 +47,10 @@ class Registrasi extends Component {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-md-6">
-                <div className="card shadow-none mb-4 mx-4">
+                <div className="card shadow-none">
                   <div className="card-body p-4">
                     <img
-                      src="https://i.ibb.co/t2xpHnw/undraw-Mobile-login-re-9ntv.png"
+                      src="https://masulyablog.sirv.com/secs2022/register.png"
                       alt="Ilustrasi registrasi akun"
                       width="150"
                     />

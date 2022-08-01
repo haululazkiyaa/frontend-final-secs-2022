@@ -63,7 +63,7 @@ class Password extends Component {
         this.props.notify("success", "Password berhasil diganti!");
         this.props.notify(
           "info",
-          "Tunggu sebentar, anda akan dialihkan ke halaman login."
+          "Tunggu sebentar, anda akan dialihkan ke halaman dashboard."
         );
 
         setTimeout(() => {
@@ -112,7 +112,7 @@ class Password extends Component {
                   <div className="card mb-4 mx-4">
                     <div className="card-body p-4">
                       <img
-                        src="https://i.ibb.co/qJ3BLj6/undraw-Forgot-password-re-hxwm.png"
+                        src="https://masulyablog.sirv.com/secs2022/password.png"
                         alt="Ilustrasi mengganti password"
                         width="150"
                       />

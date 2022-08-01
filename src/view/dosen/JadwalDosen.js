@@ -270,7 +270,7 @@ class JadwalDosen extends Component {
   // handle expand table
   expand = (get) => {
     return (
-      <table>
+      <table className="table my-2">
         <tbody>
           <tr>
             <th>Fakultas:</th>

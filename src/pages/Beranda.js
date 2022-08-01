@@ -103,8 +103,8 @@ class Beranda extends Component {
           <div className="hero position-relative">
             <div className="position-absolute d-none d-xl-block control-1">
               <img
-                src="https://i.ibb.co/S7sDXCv/Lihat-Jadwal-Kuliah-3.png"
-                alt=" /"
+                src="https://masulyablog.sirv.com/secs2022/circle.png"
+                alt=""
                 width="150"
               />
             </div>
@@ -117,9 +117,9 @@ class Beranda extends Component {
                     University
                   </h1>
                   <p className="mb-4">
-                    Untuk mengakses laman{" "}
-                    <strong>Portal Akademik Mahasiswa (PAMa)</strong>, silahkan{" "}
-                    <strong>mendaftar akun baru</strong> atau{" "}
+                    Untuk mengakses laman
+                    <strong>Portal Akademik Mahasiswa (PAMa)</strong>, silahkan
+                    <strong>mendaftar akun baru</strong> atau
                     <strong>masuk menggunakan akun yang ada</strong> terlebih
                     dahulu.
                   </p>
@@ -138,8 +138,8 @@ class Beranda extends Component {
                 </div>
                 <div className="col-lg-4 text-center d-none d-lg-block pt-5">
                   <img
-                    src="https://i.ibb.co/mFJ5FmZ/Lihat-Jadwal-Kuliah-1.png"
-                    alt=" /"
+                    src="https://masulyablog.sirv.com/secs2022/hero.png"
+                    alt=""
                     width="350"
                   />
                 </div>
@@ -254,14 +254,14 @@ class Beranda extends Component {
               <div className="row">
                 <h2 className="card-title text-danger mb-4">Tentang PAMa</h2>
                 <p>
-                  <strong>Portal Akademik Mahasiswa (PAMa)</strong> merupakan{" "}
+                  <strong>Portal Akademik Mahasiswa (PAMa)</strong> merupakan
                   <strong>
                     aplikasi Sistem Informasi Akademik (SIAkad) berbasis website
                     yang terpadu
                   </strong>
                   . Mahasiswa dan Dosen dapat mengakses dashboard PAMa dengan
                   mudah menggunakan akun pribadi masing-masing. Khusus untuk
-                  Mahasiswa,{" "}
+                  Mahasiswa,
                   <strong>
                     PAMa menyedikan berbagai informasi akademik seperti Jadwal
                     Kuliah, Nilai, Biaya Pendidikan, sekaligus Sistem
@@ -280,78 +280,77 @@ class Beranda extends Component {
                 <div className="col">
                   <div className="card h-100">
                     <img
-                      src="https://smb.telkomuniversity.ac.id/wp-content/uploads/2022/04/web-banner-beasiswa-secs-telkom-university-2022-1024x386.jpeg"
+                      src="https://masulyablog.sirv.com/secs2022/mtk-1000.jpg"
                       className="card-img-top"
                       height="200"
-                      alt="..."
+                      alt=""
                     />
                     <div className="card-body">
-                      <h5 className="card-title">Card title</h5>
-                      <p className="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.{" "}
-                        <a href="/" className="card-link">
-                          Baca selengkapnya &gt;
-                        </a>
-                      </p>
-                    </div>
-                    <div className="card-footer">
-                      <small className="text-medium-emphasis">
-                        Last updated 3 mins ago
-                      </small>
-                    </div>
-                  </div>
-                </div>
-                <div className="col">
-                  <div className="card h-100">
-                    <img
-                      src="https://smb.telkomuniversity.ac.id/wp-content/uploads/2022/04/web-banner-beasiswa-secs-telkom-university-2022-1024x386.jpeg"
-                      className="card-img-top"
-                      height="200"
-                      alt="..."
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title">Card title</h5>
+                      <h5 className="card-title">
+                        Juan D. Khusuma Berhasil Lolos UTBK dengan Nilai Matematika Sempurna
+                      </h5>
                       <p className="card-text">
                         This card has supporting text below as a natural lead-in
-                        to additional content.{" "}
+                        to additional content.&nbsp;
                         <a href="/" className="card-link">
                           Baca selengkapnya &gt;
                         </a>
                       </p>
                     </div>
                     <div className="card-footer">
-                      <small className="text-medium-emphasis">
-                        Last updated 3 mins ago
-                      </small>
+                      <small className="text-medium-emphasis">1/8/2022</small>
                     </div>
                   </div>
                 </div>
                 <div className="col">
                   <div className="card h-100">
                     <img
-                      src="https://smb.telkomuniversity.ac.id/wp-content/uploads/2022/04/web-banner-beasiswa-secs-telkom-university-2022-1024x386.jpeg"
+                      src="https://masulyablog.sirv.com/secs2022/secs2022.jpeg"
                       className="card-img-top"
                       height="200"
-                      alt="..."
+                      alt=""
                     />
                     <div className="card-body">
-                      <h5 className="card-title">Card title</h5>
+                      <h5 className="card-title">
+                        Muhammad Haulul Azkiyaa Menjadi Juara SECS 2022 Telkom
+                        University
+                      </h5>
                       <p className="card-text">
-                        This is a wider card with supporting text below as a
-                        natural lead-in to additional content. This card has
-                        even longer content than the first to show that equal
-                        height action.{" "}
+                        This card has supporting text below as a natural lead-in
+                        to additional content.&nbsp;
                         <a href="/" className="card-link">
                           Baca selengkapnya &gt;
                         </a>
                       </p>
                     </div>
                     <div className="card-footer">
-                      <small className="text-medium-emphasis">
-                        Last updated 3 mins ago
-                      </small>
+                      <small className="text-medium-emphasis">29/7/2022</small>
+                    </div>
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="card h-100">
+                    <img
+                      src="https://masulyablog.sirv.com/secs2022/ioi2022.png"
+                      className="card-img-top"
+                      height="200"
+                      alt=""
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        Perdi Menjadi Perwakilan Indonesia di IOI 2022 yang
+                        diselenggarakan di Bali
+                      </h5>
+                      <p className="card-text">
+                        This card has supporting text below as a natural lead-in
+                        to additional content.&nbsp;
+                        <a href="/" className="card-link">
+                          Baca selengkapnya &gt;
+                        </a>
+                      </p>
+                    </div>
+                    <div className="card-footer">
+                      <small className="text-medium-emphasis">25/7/2022</small>
                     </div>
                   </div>
                 </div>
@@ -363,7 +362,7 @@ class Beranda extends Component {
           <div className="container">
             <div className="row">
               <div className="col">
-                SECS 2022 | Dibuat dengan❤️ oleh{" "}
+                SECS 2022 | Dibuat dengan ❤️ oleh&nbsp;
                 <a href="https://coreui.io/docs/">Tim II</a>
               </div>
               <div className="col text-end">

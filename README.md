@@ -1,70 +1,41 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](https://masulyablog.sirv.com/secs2022/PAMa.png)
 
-## Available Scripts
+**Portal Akademik Mahasiswa** disingkat **PAMa** merupakan aplikasi berbasis website yang terinspirasi dari Sistem Akademik Mahasiswa atau lebih dikenal dengan SIAkad. Fitur-fitur PAMA juga terinspirasi dari SIAKad seperti laman Jadwal Kuliah dan Ujian dan laman Nilai.
 
-In the project directory, you can run:
+## Latar Belakang
+Aplikasi ini dibuat khusus untuk memenuhi tugas **Software Engineer Competition Scholarship (SECS) 2022** yang diselenggarakan oleh **Telkom University**.
 
-### `npm start`
+## Pengembangan
+Pengembangan aplikasi ini diinisiasi oleh TIM II yang terdiri dari tiga orang, yakni sebagai berikut:
+- **[Muhammad Haulul Azkiyaa](https://github.com/haululazkiyaa "Muhammad Haulul Azkiyaa")** (Frontend)
+- **[Juan Dharmananda Khusuma](https://github.com/juankhusuma "Juan Dharmananda Khusuma")** (Backend)
+- **[P e r d i](https://github.com/perdiDev "P e r d i") **(Backend)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Teknologi
+| **Frontend:**  | **BE stack:**  |
+| ------------ | ------------ |
+| HTML | Node.js |
+| CSS| Prisma |
+| CoreUI | Railway |
+| Node.js| PostgreSQL |
+| React.js| Nest.js |
+| dll. | dll. |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Souce Code
+- Frontend: https://github.com/haululazkiyaa/frontend-final-secs-2022
+- Backend: https://github.com/juankhusuma/backend-final-secs-2022
 
-### `npm test`
+## Dokumentasi
+https://github.com/thomaslyokos2021/files/raw/main/documentation.pdf (v1)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Demo
+- Client: https://secs2022.ulya.my.id
+- API: https://secs2022-api.herokuapp.com
 
-### `npm run build`
+**Informasi login**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+|  |  **DOSEN** | **MAHASISWA**  |
+| ------------ | ------------ | ------------ |
+| NIM/NIP | 1234567890  |  1234567891 |
+| Password |  12345678 | 12345678  |

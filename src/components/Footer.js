@@ -7,8 +7,8 @@ class Footer extends Component {
       <React.Fragment>
         <footer className="footer">
           <div>
-            SECS 2022 | Dibuat dengan ❤️ oleh{" "}
-            <a href="https://coreui.io/docs/">Tim II</a>
+            SECS 2022 | Dibuat dengan ❤️ oleh&nbsp;
+            <a href="https://haululazkiyaa.gitbook.io/pama-docs/">Tim II</a>
           </div>
           <div className="ms-auto">
             Ditenagai <a href="https://coreui.io">CoreUI</a> © 2022

@@ -50,7 +50,7 @@ class Login extends Component {
                   <div className="card shadow-none col-md-7 p-4 mb-0">
                     <div className="card-body">
                       <img
-                        src="https://i.ibb.co/GxNgvFm/undraw-secure-login-pdn4.png"
+                        src="https://masulyablog.sirv.com/secs2022/login.png"
                         alt="Ilustrasi pengguna login"
                         width="150"
                       />
@@ -138,7 +138,7 @@ class Login extends Component {
                       <div>
                         <h2 className="mb-4">Registrasi</h2>
                         <img
-                          src="https://i.ibb.co/s643nRr/undraw-Authentication-re-svpt-removebg-preview.png"
+                          src="https://masulyablog.sirv.com/secs2022/login-reg.png"
                           alt="Registrasi"
                           width="150"
                         />
