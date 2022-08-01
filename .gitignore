@@ -10,6 +10,28 @@
 
 # production
 /build
+/public/css/examples.min.css
+/public/css/examples.min.css.map
+/public/css/style.min.css
+/public/css/style.min.css.map
+/public/vendors/chart.js
+/public/vendors/@coreui/chartjs
+/public/js/charts.js
+/public/js/charts.js.map
+/public/js/main.js
+/public/js/main.js.map
+/public/js/popovers.js
+/public/js/popovers.js.map
+/public/js/toasts.js
+/public/js/toasts.js.map
+/public/js/tooltips.js
+/public/js/tooltips.js.map
+/public/js/widgets.js
+/public/js/widgets.js.map
+/public/assets
+/public/logo512.png
+/public/logo192.png
+/public/favicon.ico
 
 # misc
 .DS_Store

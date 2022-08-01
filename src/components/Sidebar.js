@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 
 class Sidebar extends Component {
   state = {
-    locate: this.props.data.title
-  }
+    // get page title
+    locate: this.props.data.title,
+  };
 
+  // handle first load
   componentDidMount() {
-    if(this.props.sidebarUnfoldable === ' sidebar-narrow-unfoldable show') {
+    if (this.props.sidebarUnfoldable === " sidebar-narrow-unfoldable show") {
       this.props.toggleSidebarMobile();
     }
   }
@@ -16,7 +18,13 @@ class Sidebar extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="sidebar-backdrop fade show" hidden={this.props.sidebarUnfoldable !== ' sidebar-narrow-unfoldable show'} onClick={this.props.toggleSidebarMobile}></div>
+        <div
+          className="sidebar-backdrop fade show"
+          hidden={
+            this.props.sidebarUnfoldable !== " sidebar-narrow-unfoldable show"
+          }
+          onClick={this.props.toggleSidebarMobile}
+        ></div>
         <div
           className={
             "sidebar sidebar-dark sidebar-fixed" +
@@ -28,14 +36,14 @@ class Sidebar extends Component {
           <div className="sidebar-brand d-none d-md-flex">
             <div className="sidebar-brand-full">
               <img
-                src="https://i.ibb.co/99k3ggz/SAIS-1.png"
+                src="https://masulyablog.sirv.com/secs2022/PAMa-white.png"
                 height="42"
                 alt="logo"
               />
             </div>
             <div className="sidebar-brand-narrow">
               <img
-                src="https://i.ibb.co/N2K6sFH/Lihat-Jadwal-Kuliah-5.png"
+                src="https://masulyablog.sirv.com/secs2022/PAMa-icon-white.png"
                 height="42"
                 alt="logo"
               />
@@ -48,8 +56,15 @@ class Sidebar extends Component {
           >
             <li className="nav-title">MENU</li>
             <li className="nav-item">
-              <Link to="/dashboard" className={(this.state.locate === 'Dashboard') ? 'nav-link active' : 'nav-link'}
-               onClick={this.props.handleSubmenu}>
+              <Link
+                to="/dashboard"
+                className={
+                  this.state.locate === "Dashboard"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+                onClick={this.props.subMenu}
+              >
                 <svg className="nav-icon">
                   <use href="vendors/@coreui/icons/svg/free.svg#cil-apps"></use>
                 </svg>
@@ -58,9 +73,14 @@ class Sidebar extends Component {
             </li>
             <li className="nav-title">AKADEMIK</li>
             <li className="nav-item">
-              <Link to="/jadwal"
-                 className={(this.state.locate === 'Jadwal') ? 'nav-link active' : 'nav-link'}
-                 onClick={this.props.handleSubmenu}
+              <Link
+                to="/jadwal"
+                className={
+                  this.state.locate === "Jadwal"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+                onClick={this.props.subMenu}
               >
                 <svg className="nav-icon">
                   <use href="vendors/@coreui/icons/svg/free.svg#cil-list-rich"></use>
@@ -69,9 +89,12 @@ class Sidebar extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/nilai"
-                 className={(this.state.locate === 'Nilai') ? 'nav-link active' : 'nav-link'}
-                 onClick={this.props.handleSubmenu}
+              <Link
+                to="/nilai"
+                className={
+                  this.state.locate === "Nilai" ? "nav-link active" : "nav-link"
+                }
+                onClick={this.props.subMenu}
               >
                 <svg className="nav-icon">
                   <use href="vendors/@coreui/icons/svg/free.svg#cil-bar-chart"></use>
@@ -79,25 +102,46 @@ class Sidebar extends Component {
                 Nilai
               </Link>
             </li>
-            <li className={(this.props.submenu === 'show1') ? 'nav-group show' : 'nav-group'}><Link to="#" id="show1" className="nav-link nav-group-toggle" onClick={this.props.handleSubmenu}>
-              <svg className="nav-icon">
-                <use href="vendors/@coreui/icons/svg/free.svg#cil-star"></use>
-              </svg> Icons</Link>
+            <li
+              className={
+                this.props.subMenuShow === "show1" ? "nav-group show" : "nav-group"
+              }
+            >
+              <Link
+                to="#"
+                id="show1"
+                className="nav-link nav-group-toggle"
+                onClick={this.props.subMenu}
+              >
+                <svg className="nav-icon">
+                  <use href="vendors/@coreui/icons/svg/free.svg#cil-clone"></use>
+                </svg>
+                Lainnya
+              </Link>
               <ul className="nav-group-items">
                 <li className="nav-item">
-                  <Link to="/about-us"  className={(this.state.locate === 'Tentang Kami') ? 'nav-link active' : 'nav-link'}> CoreUI Icons
-                  <span className="badge badge-sm bg-success ms-auto">Free</span>
+                  <Link
+                    to="/404"
+                    className={
+                      this.state.locate === "404 Not Found"
+                        ? "nav-link active"
+                        : "nav-link"
+                    }
+                  >
+                    Halaman 404
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link to="/nilai" className={(this.state.locate === 'Nilai') ? 'nav-link active' : 'nav-link'}> CoreUI Icons - Brand</Link>
-                  </li>
               </ul>
             </li>
             <li className="nav-item mt-auto">
-              <Link to="/about"
-                 className={(this.state.locate === 'Tentang PAMa') ? 'nav-link active' : 'nav-link'}
-                 onClick={this.props.handleSubmenu}
+              <Link
+                to="/about"
+                className={
+                  this.state.locate === "Tentang PAMa"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+                onClick={this.props.subMenu}
               >
                 <svg className="nav-icon">
                   <use href="vendors/@coreui/icons/svg/free.svg#cil-info"></use>

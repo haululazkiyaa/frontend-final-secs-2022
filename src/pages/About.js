@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -41,32 +42,32 @@ class About extends Component {
                       <div className="row">
                         <div className="col">
                           <span>FE stack:</span>
-                          <div class="avatar bg-success text-white m-2">
+                          <div className="avatar bg-success text-white m-2">
                             <svg className="icon">
                               <use href="vendors/@coreui/icons/svg/brand.svg#cib-node-js"></use>
                             </svg>
                           </div>
-                          <div class="avatar bg-info text-white me-2">
+                          <div className="avatar bg-info text-white me-2">
                             <svg className="icon">
                               <use href="vendors/@coreui/icons/svg/brand.svg#cib-react"></use>
                             </svg>
                           </div>
-                          <div class="avatar bg-dark text-white me-2">
+                          <div className="avatar bg-dark text-white me-2">
                             <svg className="icon">
                               <use href="vendors/@coreui/icons/svg/brand.svg#cib-coreui-c"></use>
                             </svg>
                           </div>
-                          <div class="avatar bg-warning text-white me-2">
+                          <div className="avatar bg-warning text-white me-2">
                             <svg className="icon">
                               <use href="vendors/@coreui/icons/svg/brand.svg#cib-html5-shield"></use>
                             </svg>
                           </div>
-                          <div class="avatar bg-primary text-white me-2">
+                          <div className="avatar bg-primary text-white me-2">
                             <svg className="icon">
                               <use href="vendors/@coreui/icons/svg/brand.svg#cib-css3-shiled"></use>
                             </svg>
                           </div>
-                          <div class="avatar bg-secondary text-white">
+                          <div className="avatar bg-secondary text-white">
                             <strong>+2</strong>
                           </div>
                         </div>
@@ -74,124 +75,119 @@ class About extends Component {
                       <div className="row">
                         <div className="col">
                           <span>BE stack:</span>
-                          <div class="avatar bg-success text-white m-2">
+                          <div className="avatar bg-success text-white m-2">
                             <svg className="icon">
                               <use href="vendors/@coreui/icons/svg/brand.svg#cib-node-js"></use>
                             </svg>
                           </div>
-                          <div class="avatar bg-secondary text-white me-2">
+                          <div className="avatar bg-secondary text-white me-2">
                             <svg className="icon">
                               <use href="vendors/@coreui/icons/svg/brand.svg#cib-postgresql"></use>
                             </svg>
                           </div>
-                          <div class="avatar bg-secondary text-white">
+                          <div className="avatar bg-secondary text-white">
                             <strong>+2</strong>
                           </div>
                         </div>
                       </div>
+                      <h2>Credit</h2>
+                      <ul>
+                        <li><strong>Foto Telkom Univeristy </strong>- https://unsplash.com/photos/FcLyt7lW5wg</li>
+                        <li><strong>Foto wanita memegang folder </strong>- https://unsplash.com/photos/FcLyt7lW5wg</li>
+                      </ul>
                       <hr />
-                      <button class="btn btn-primary me-2" type="button">
-                        <svg class="icon me-2">
-                          <use href="vendors/@coreui/icons/svg/brand.svg#cib-docusign"></use>
-                        </svg>Unduh Dokumentasi
-                      </button>
-                      <button class="btn btn-success text-white" type="button">
-                        <svg class="icon me-2">
+                      <Link to="" className="btn btn-primary me-2" type="button">
+                        <svg className="icon me-2">
+                          <use href="vendors/@coreui/icons/svg/brand.svg#cil-book"></use>
+                        </svg>Dokumentasi
+                      </Link>
+                      <Link to="https://github.com/haululazkiyaa/frontend-final-secs-2022#readme" className="btn btn-success text-white" type="button">
+                        <svg className="icon me-2">
                           <use href="vendors/@coreui/icons/svg/brand.svg#cib-github"></use>
-                        </svg>Unduh Source Code
-                      </button>
+                        </svg>Source Code
+                      </Link>
                     </div>
                   </div>
                 </div>
                 <div className="col-lg-6">
-                  <div class="card mb-3">
-                    <div class="row g-0">
-                      <div class="col-4">
-                        <img src="https://avatars.githubusercontent.com/u/105899777" class="img-fluid rounded-start" alt="..." />
+                  <div className="card mb-3">
+                    <div className="row g-0">
+                      <div className="col-4">
+                        <img src="https://masulyablog.sirv.com/secs2022/haulul.jpg" className="img-fluid rounded-start" alt="Foto Muhammad Haulul Azkiyaa" />
                       </div>
-                      <div class="col-8">
-                        <div class="card-body">
-                          <p class="badge text-bg-success text-white">Frontend</p>
-                          <h5 class="card-title">Muhammad Haulul Azkiyaa</h5>
-                          <p class="card-text">SMAN Tanjungsari</p>
-                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn btn-danger text-white">
+                      <div className="col-8">
+                        <div className="card-body">
+                          <p className="badge text-bg-success text-white">Frontend</p>
+                          <h5 className="card-title">Muhammad Haulul Azkiyaa</h5>
+                          <p className="card-text">SMAN Tanjungsari</p>
+                          <div className="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <a href="mailto:haululazkiya@gmail.com" type="button" className="btn btn-danger text-white">
                               <svg className="icon">
                                   <use href="vendors/@coreui/icons/svg/brand.svg#cib-gmail"></use>
                               </svg>
-                            </button>
-                            <button type="button" class="btn btn-info text-white">
+                            </a>
+                            <a href="https://instagram.com/haululazkiyaa" type="button" className="btn btn-info text-white">
                               <svg className="icon">
                                   <use href="vendors/@coreui/icons/svg/brand.svg#cib-instagram"></use>
                               </svg>
-                            </button>
-                            <button type="button" class="btn btn-dark text-white">
+                            </a>
+                            <a href="https://github.com/haululazkiyaa" type="button" className="btn btn-dark text-white">
                               <svg className="icon">
                                   <use href="vendors/@coreui/icons/svg/brand.svg#cib-github"></use>
                               </svg>
-                            </button>
+                            </a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="card mb-3">
-                    <div class="row g-0">
-                      <div class="col-4">
-                        <img src="https://raw.githubusercontent.com/juankhusuma/juankhusuma/main/profile_pic.jpeg" class="img-fluid rounded-start" alt="..." />
+                  <div className="card mb-3">
+                    <div className="row g-0">
+                      <div className="col-4">
+                        <img src="https://masulyablog.sirv.com/secs2022/juan.jpeg" className="img-fluid rounded-start" alt="Foto Juan D. Khusuma" />
                       </div>
-                      <div class="col-8">
-                        <div class="card-body">
-                          <p class="badge text-bg-warning">Backend</p>
-                          <h5 class="card-title">Juan Dharmananda Khusuma</h5>
-                          <p class="card-text">SMAN 1 Tembilahan</p>
-                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn btn-danger text-white">
-                              <svg className="icon">
-                                  <use href="vendors/@coreui/icons/svg/brand.svg#cib-gmail"></use>
-                              </svg>
-                            </button>
-                            <button type="button" class="btn btn-info text-white">
+                      <div className="col-8">
+                        <div className="card-body">
+                          <p className="badge text-bg-warning">Backend</p>
+                          <h5 className="card-title">Juan Dharmananda Khusuma</h5>
+                          <p className="card-text">SMAN 1 Tembilahan</p>
+                          <div className="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <a href="https://www.instagram.com/juan.d.khusuma" type="button" className="btn btn-info text-white">
                               <svg className="icon">
                                   <use href="vendors/@coreui/icons/svg/brand.svg#cib-instagram"></use>
                               </svg>
-                            </button>
-                            <button type="button" class="btn btn-dark text-white">
+                            </a>
+                            <a href="https://github.com/juankhusuma" type="button" className="btn btn-dark text-white">
                               <svg className="icon">
                                   <use href="vendors/@coreui/icons/svg/brand.svg#cib-github"></use>
                               </svg>
-                            </button>
+                            </a>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="card mb-3">
-                    <div class="row g-0">
-                      <div class="col-4">
-                        <img src="https://avatars.githubusercontent.com/u/108800230" class="img-fluid rounded-start" alt="..." />
+                  <div className="card mb-3">
+                    <div className="row g-0">
+                      <div className="col-4">
+                        <img src="https://masulyablog.sirv.com/secs2022/perdi.jpg" className="img-fluid rounded-start" alt="Foto Perdi" />
                       </div>
-                      <div class="col-8">
-                        <div class="card-body">
-                          <p class="badge text-bg-warning">Backend</p>
-                          <h5 class="card-title">P e r d i</h5>
-                          <p class="card-text">SMAN 2 Pangkep</p>
-                          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <button type="button" class="btn btn-danger text-white">
-                              <svg className="icon">
-                                  <use href="vendors/@coreui/icons/svg/brand.svg#cib-gmail"></use>
-                              </svg>
-                            </button>
-                            <button type="button" class="btn btn-info text-white">
+                      <div className="col-8">
+                        <div className="card-body">
+                          <p className="badge text-bg-warning">Backend</p>
+                          <h5 className="card-title">P e r d i</h5>
+                          <p className="card-text">SMAN 2 Pangkep</p>
+                          <div className="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <a href="https://www.instagram.com/stei_if" type="button" className="btn btn-info text-white">
                               <svg className="icon">
                                   <use href="vendors/@coreui/icons/svg/brand.svg#cib-instagram"></use>
                               </svg>
-                            </button>
-                            <button type="button" class="btn btn-dark text-white">
+                            </a>
+                            <a href="https://github.com/perdiDev" type="button" className="btn btn-dark text-white">
                               <svg className="icon">
                                   <use href="vendors/@coreui/icons/svg/brand.svg#cib-github"></use>
                               </svg>
-                            </button>
+                            </a>
                           </div>
                         </div>
                       </div>

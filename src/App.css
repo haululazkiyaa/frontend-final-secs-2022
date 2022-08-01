@@ -96,13 +96,13 @@ a:hover {
   border-bottom: none;
 }
 
-.card, .alert, .dropdown-menu {
+.card, .dropdown-menu {
   box-shadow: 0px 1px 3px #8c9bb3;
   border: none;
 }
 
 .dashboard-card {
-  background-image: url(https://suryatiningsih.staff.telkomuniversity.ac.id/files/2017/09/telU.jpg);
+  background-image: url(https://masulyablog.sirv.com/secs2022/telU.jpg);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -161,6 +161,23 @@ a:hover {
 
 .swal2-confirm, .swal2-cancel, .swal2-confirm:hover, .swal2-cancel:hover, .swal2-confirm:focus, .swal2-cancel:focus {
   color: #fff;
+}
+
+.jadwalcard {
+  border: 1px solid rgba(0, 0, 21, 0.175);
+  margin: 5px 0;
+  border-radius: 15px !important;
+}
+
+.jadwal {
+  box-shadow: 0px 1px 3px #8c9bb3;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.rdt_TableCell, .rdt_TableCol_Sortable {
+  font-size: 1rem !important;
 }
 
 @keyframes gradient {

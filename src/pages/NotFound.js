@@ -1,39 +1,45 @@
 import React, { Component } from "react";
 import { withAuth } from "../context/AuthContext";
-import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 class NotFound extends Component {
   state = {
-    title: '404 NotFound'
-  }
+    title: "404 Not Found",
+  };
 
-  componentDidMount(){
+  componentDidMount() {
     document.title = this.state.title;
   }
 
-    render() {
-        return(
-            <React.Fragment>
-                <Sidebar data={this.state} />
-                    <div className="wrapper d-flex flex-column min-vh-100 bg-light">
-                    <Header data={this.state} />
-                    <div className="body flex-grow-1 px-3">
-                      <div className="container-lg">
-                        <div className="card mb-4">
-                          <div className="card-header">{this.state.title}</div>
-                          <div className="card-body">
-                            <p>Tes</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <Footer />
+  render() {
+    return (
+      <React.Fragment>
+        <div className="gradient-animation min-vh-100 d-flex flex-row align-items-center">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-md-6">
+                <div className="clearfix text-white">
+                  <h1 className="float-start display-3 me-4">404</h1>
+                  <h4 className="pt-3">Uups! terjadi kesalahan.</h4>
+                  <p className="text-white">
+                    Halaman yang anda cari tidak ditemukan.
+                  </p>
+                  <div class="text-center">
+                    <Link to="/" class="btn btn-outline-light mt-3" type="button">
+                      <svg className="icon me-2">
+                        <use href="vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+                      </svg>
+                      Back to home
+                    </Link>
                   </div>
-            </React.Fragment>
-        )
-    }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
-export default withAuth(NotFound)
+export default withAuth(NotFound);

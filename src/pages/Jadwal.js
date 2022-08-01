@@ -8,11 +8,15 @@ import JadwalMahasiswa from "../view/mahasiswa/JadwalMahasiswa";
 
 class Jadwal extends Component {
   state = {
+    // set page title
     title: 'Jadwal'
   }
 
+  // handle first load
   componentDidMount(){
     document.title = this.state.title;
+
+    // check active session
     this.props.sessionCheck();
   }
 
@@ -25,22 +29,14 @@ class Jadwal extends Component {
                     <div className="body flex-grow-1 px-3">
                       <div className="container-lg">
                         <div className="row">
-                          <div className="col-lg-8">
+                          <div className="col-lg-12">
                             <div className="card mb-4">
                               <div className="card-header">{this.state.title}</div>
                               <div className="card-body">
                                 {
-                                  this.props.user.Role === "MAHASISWA" ? <JadwalMahasiswa />
+                                  this.props.userLoggedIn.Role === "MAHASISWA"  ? <JadwalMahasiswa />
                                                                         : <JadwalDosen />
                                 }
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-lg-4">
-                            <div className="card mb-4">
-                              <div className="card-header">Unduhan</div>
-                              <div className="card-body">
-                                <p>Tes</p>
                               </div>
                             </div>
                           </div>
