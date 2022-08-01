@@ -1,5 +1,5 @@
 
-![](https://masulyablog.sirv.com/secs2022/PAMa.png)
+![](https://masulyablog.sirv.com/secs2022/PAMa-white.png)
 
 **Portal Akademik Mahasiswa** disingkat **PAMa** merupakan aplikasi berbasis website yang terinspirasi dari Sistem Akademik Mahasiswa atau lebih dikenal dengan SIAkad. Fitur-fitur PAMA juga terinspirasi dari SIAKad seperti laman Jadwal Kuliah dan Ujian dan laman Nilai.
 
@@ -10,7 +10,7 @@ Aplikasi ini dibuat khusus untuk memenuhi tugas **Software Engineer Competition 
 Pengembangan aplikasi ini diinisiasi oleh TIM II yang terdiri dari tiga orang, yakni sebagai berikut:
 - **[Muhammad Haulul Azkiyaa](https://github.com/haululazkiyaa "Muhammad Haulul Azkiyaa")** (Frontend)
 - **[Juan Dharmananda Khusuma](https://github.com/juankhusuma "Juan Dharmananda Khusuma")** (Backend)
-- **[P e r d i](https://github.com/perdiDev "P e r d i") **(Backend)
+- **[P e r d i](https://github.com/perdiDev "P e r d i")** (Backend)
 
 ## Teknologi
 | **Frontend:**  | **BE stack:**  |
